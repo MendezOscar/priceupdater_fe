@@ -49,6 +49,8 @@
       <b-button class="my-2" type="submit" @click="add = true">Cancel</b-button>
     </form>
 
+    <br>
+
     <form @submit.prevent="addProduct()" v-if="add">
       <h5>Add new product</h5>
       <div class="form-row">
@@ -76,6 +78,8 @@
         >Add new product</b-button
       >
     </form>
+
+    <br>
 
     <table class="table">
       <thead>
