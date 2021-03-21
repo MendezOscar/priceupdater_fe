@@ -1,8 +1,11 @@
 <template>
   <div class="container">
     <h1>{{ msg }}</h1>
-    <p>Hola, bienvenido a la prueba de CO de ingeniero de software.</p>
-    <br>
+    <p>
+      Hola, bienvenido al resultado de mi prueba de CO de ingeniero de software,
+      esta tabla muestra el resultado al dia 30.
+    </p>
+    <br />
     <table class="table">
       <thead>
         <tr>
@@ -33,13 +36,15 @@ export default {
   data() {
     return {
       products: [],
-    };
+      specificDay: 0,
+    };  
   },
   created() {
     this.getProducts();
   },
   methods: {
-    getProducts() {
+    getProducts(specificDay) {
+      this.products = {};
       this.axios
         .get("/get-products-after-30-days")
         .then((res) => {
